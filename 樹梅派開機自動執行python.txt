@@ -1,0 +1,28 @@
+
+將檔案複製到
+sudo cp /home/pi/mystart.service /etc/systemd/system/mystart.service
+
+
+啟動服務
+sudo systemctl start mystart.service
+
+
+查看服務
+systemctl status mystart.service
+
+
+修改檔案，需要重新加載
+systemctl daemon-reload
+
+
+開機自動啟動
+sudo systemctl enable mystart.service
+
+
+停止服務
+sudo systemctl stop mystart.service
+
+
+**注意事項**
+
+mystart -> 是檔案名稱
