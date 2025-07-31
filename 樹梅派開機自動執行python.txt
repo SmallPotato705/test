@@ -1,3 +1,27 @@
+sudo nano /etc/systemd/system/mystart.service
+
+# ---------------------------------
+# service 文件內容
+# ---------------------------------
+
+[Unit]
+Description=My Custom Python Script Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u /home/pi/RealTime.py
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+
+# ---------------------------------
+# 
+# ---------------------------------
 
 將檔案複製到
 sudo cp /home/pi/mystart.service /etc/systemd/system/mystart.service
